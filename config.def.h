@@ -21,7 +21,7 @@ static const unsigned int alphas[][3]      = {
 
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm] = { "#bbbbbb", "#25282f" },
+	[SchemeNorm] = { "#bbbbbb", "#202329" },
 	[SchemeSel] = { "#d4d4d4", "#005577" },
 	[SchemeSelHighlight] = { "#ffc978", "#005577" },
 	[SchemeNormHighlight] = { "#ffc978", "#222222" },
@@ -29,6 +29,8 @@ static const char *colors[SchemeLast][2] = {
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
+static unsigned int maxhist    = 64;
+static int histnodup           = 1;	/* if 0, record repeated histories */
 
 /*
  * Characters not considered part of a word while deleting words
