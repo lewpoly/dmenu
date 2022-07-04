@@ -1,5 +1,5 @@
-config.h
 *.rej
 *.orig
 
+config.h
 dmenu
