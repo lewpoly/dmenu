@@ -11,7 +11,7 @@ static const char *fonts[] = {
 };
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 
-static const unsigned int baralpha = 0x90;
+static const unsigned int baralpha = OPAQUE;
 static const unsigned int borderalpha = OPAQUE;
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -21,7 +21,7 @@ static const unsigned int alphas[][3]      = {
 
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm] = { "#d4d4d4", "#000000" },
+	[SchemeNorm] = { "#d4d4d4", "#222222" },
 	[SchemeSel] = { "#d4d4d4", "#005577" },
 	[SchemeSelHighlight] = { "#ffc978", "#005577" },
 	[SchemeNormHighlight] = { "#ffc978", "#222222" },
@@ -37,3 +37,6 @@ static int histnodup           = 1;	/* if 0, record repeated histories */
  * for example: " /?\"&[]"
  */
 static const char worddelimiters[] = " ";
+
+/* Size of the window border */
+static unsigned int border_width = 0;
